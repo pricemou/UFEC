@@ -1,0 +1,70 @@
+<odoo>
+  <data>
+    <!-- ufec.porfesseurs form view -->
+    <record id="ufec_departement_view_form" model="ir.ui.view">
+      <field name="name">Professeurs: list</field>
+      <field name="model">ufec.porfesseurs</field>
+      <field name="arch" type="xml">
+        <form string="">
+          <sheet>
+            <group>
+                <group>
+                <field name="image"/>
+              </group>
+              <group>
+              </group>
+              <group>
+                <field name="nom"/>
+                <field name="prenom"/>
+                <field name="identifiant_carte"/>
+                <field name="sexe"/>
+                <field name="telephone"/>
+                <field name="adresse"/>
+                <field name="Nationalite"/>
+                <field name="Responsabilite"/>
+                <field name="NBR_jours"/>
+                <field name="salaire"/>
+                <field name="date_inscription"/>
+              </group>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!-- ufec.porfesseurs tree view -->
+    <record id="ufec_departement_view_tree" model="ir.ui.view">
+      <field name="name">ufec.porfesseurs.view.tree</field>
+      <field name="model">ufec.porfesseurs</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="nom"/>
+          <field name="prenom"/>
+          <field name="identifiant_carte"/>
+          <field name="sexe"/>
+          <field name="telephone"/>
+          <field name="adresse"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- ufec.porfesseurs action window -->
+    <record id="ufec_departement_action" model="ir.actions.act_window">
+      <field name="name">Liste des Professeurs</field>
+      <field name="res_model">ufec.porfesseurs</field>
+      <field name="view_mode">tree,form</field>
+      <field name="view_type">form</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create">
+          <!-- Add Text Here -->
+        </p><p>
+          <!-- More details about what a user can do with this object will be OK --> 
+        </p>
+      </field>
+    </record>
+
+    <menuitem name="Professeurs" id="ufec_etudiant_professeurs" parent="ufec_etudiant_menu_root"  />
+    <menuitem name="liste des Professeurs" id="ufec_professeurs_list" parent="ufec_etudiant_professeurs" action="ufec_departement_action" />
+
+  </data>
+</odoo>

@@ -1,0 +1,52 @@
+<odoo>
+  <data>
+    <!-- ufec.departement form view -->
+    <record id="ufec_departement_view_form" model="ir.ui.view">
+      <field name="name">Departement: list</field>
+      <field name="model">ufec.departement</field>
+      <field name="arch" type="xml">
+        <form string="">
+          <sheet>
+            <group>
+              <group>
+                <field name="nom"/>
+                <field name="code"/>
+              </group>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!-- ufec.departement tree view -->
+    <record id="ufec_departement_view_tree" model="ir.ui.view">
+      <field name="name">ufec.departement.view.tree</field>
+      <field name="model">ufec.departement</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="nom"/>
+          <field name="code"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- ufec.departement action window -->
+    <record id="ufec_departement_action" model="ir.actions.act_window">
+      <field name="name">Liste des Departement</field>
+      <field name="res_model">ufec.departement</field>
+      <field name="view_mode">tree,form</field>
+      <field name="view_type">form</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create">
+          <!-- Add Text Here -->
+        </p><p>
+          <!-- More details about what a user can do with this object will be OK --> 
+        </p>
+      </field>
+    </record>
+
+    <menuitem name="Departement" id="ufec_etudiant_departement" parent="ufec_etudiant_menu_root"  />
+    <menuitem name="liste des Departements" id="ufec_departement_list" parent="ufec_etudiant_departement" action="ufec_departement_action" />
+
+  </data>
+</odoo>

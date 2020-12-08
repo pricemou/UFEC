@@ -1,0 +1,53 @@
+<odoo>
+  <data>
+    <!-- ufec.classe form view -->
+    <record id="ufec_classe_view_form" model="ir.ui.view">
+      <field name="name">Classe: list</field>
+      <field name="model">ufec.classe</field>
+      <field name="arch" type="xml">
+        <form string="">
+          <sheet>
+            <group>
+              <group>
+                <field name="nom"/>
+                <field name="code"/>
+              </group>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!-- ufec.classe tree view -->
+    <record id="ufec_classe_view_tree" model="ir.ui.view">
+      <field name="name">ufec.classe.view.tree</field>
+      <field name="model">ufec.classe</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="nom"/>
+          <field name="code"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- ufec.classe action window -->
+    <!-- ufec.classe action window -->
+    <record id="ufec_classe_action" model="ir.actions.act_window">
+      <field name="name">Liste des Classe</field>
+      <field name="res_model">ufec.classe</field>
+      <field name="view_mode">tree,form</field>
+      <field name="view_type">form</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create">
+          <!-- Add Text Here -->
+        </p><p>
+          <!-- More details about what a user can do with this object will be OK --> 
+        </p>
+      </field>
+    </record>
+
+    <menuitem name="Classe" id="ufec_etudiant_classe" parent="ufec_etudiant_menu_root"  />
+    <menuitem name="liste des Classes" id="ufec_classe_list" parent="ufec_etudiant_classe" action="ufec_classe_action" />
+
+  </data>
+</odoo>
