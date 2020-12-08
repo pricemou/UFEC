@@ -9,7 +9,7 @@
           <sheet>
             <group>
               <group>
-                <field name="nom"/>
+                <field name="classe_nom"/>
                 <field name="code"/>
               </group>
             </group>
@@ -19,12 +19,12 @@
     </record>
 
     <!-- ufec.classe tree view -->
-    <record id="ufec_classe_view_tree" model="ir.ui.view">
+    <record id="ufec_classe_view_tree" model="ir.ui.view">  
       <field name="name">ufec.classe.view.tree</field>
       <field name="model">ufec.classe</field>
       <field name="arch" type="xml">
         <tree>
-          <field name="nom"/>
+          <field name="classe_nom"/>
           <field name="code"/>
         </tree>
       </field>

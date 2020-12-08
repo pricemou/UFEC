@@ -8,3 +8,5 @@ class Ufec_Departement(models.Model):
     nom = fields.Char()
     code = fields.Char()
     
+    prosseurs_id = fields.One2many(comodel_name='ufec.porfesseurs', inverse_name='deparment_id')
+    subject_id = fields.One2many(comodel_name='ufec.subject', inverse_name='deparment_id')

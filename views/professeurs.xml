@@ -14,7 +14,7 @@
               <group>
               </group>
               <group>
-                <field name="nom"/>
+                <field name="f_nom"/>
                 <field name="prenom"/>
                 <field name="identifiant_carte"/>
                 <field name="sexe"/>
@@ -38,7 +38,7 @@
       <field name="model">ufec.porfesseurs</field>
       <field name="arch" type="xml">
         <tree>
-          <field name="nom"/>
+          <field name="f_nom"/>
           <field name="prenom"/>
           <field name="identifiant_carte"/>
           <field name="sexe"/>

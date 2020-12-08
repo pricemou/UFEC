@@ -16,6 +16,8 @@ class ufec_Etudiant(models.Model):
     adreesse = fields.Text()
     date_inscription= fields.Datetime()
 
+    deparment_id = fields.Many2one(comodel_name='ufec.departement')
+    classe_id = fields.Many2one(comodel_name='ufec.classe')
 
     tuteur = fields.Char()
     Non_du_tuteur = fields.Char()
