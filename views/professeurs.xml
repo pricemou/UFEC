@@ -9,7 +9,7 @@
           <sheet>
             <group>
                 <group>
-                <field name="image"/>
+                <field name="image" widget="image" nolabel="1" class="oe_avatar" />
               </group>
               <group>
               </group>
