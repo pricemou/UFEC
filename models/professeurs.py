@@ -19,7 +19,7 @@ class Ufec_professeurs(models.Model):
     deparment_id = fields.Many2one(comodel_name='ufec.departement')
     subject_id = fields.Many2one(comodel_name='ufec.subject')
 
-    classe_id = fields.Many2many(comodel_name='ufec.classe',
+    classe_ids = fields.Many2many(comodel_name='ufec.classe',
                             relation='prof_class_ref',
                             column1='f_nom',
                             column2='classe_nom')

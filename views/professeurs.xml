@@ -1,7 +1,7 @@
 <odoo>
   <data>
     <!-- ufec.porfesseurs form view -->
-    <record id="ufec_departement_view_form" model="ir.ui.view">
+    <record id="ufec_professeurs_view_form" model="ir.ui.view">
       <field name="name">Professeurs: list</field>
       <field name="model">ufec.porfesseurs</field>
       <field name="arch" type="xml">
@@ -25,15 +25,23 @@
                 <field name="NBR_jours"/>
                 <field name="salaire"/>
                 <field name="date_inscription"/>
+                <field name="deparment_id"/>
+                <field name="subject_id"/>
               </group>
             </group>
+            <notebook>
+            <page string="Liste des classes">
+              <field name="classe_ids"/>
+            </page>
+          </notebook>
           </sheet>
+          
         </form>
       </field>
     </record>
 
     <!-- ufec.porfesseurs tree view -->
-    <record id="ufec_departement_view_tree" model="ir.ui.view">
+    <record id="ufec_professeurs_view_tree" model="ir.ui.view">
       <field name="name">ufec.porfesseurs.view.tree</field>
       <field name="model">ufec.porfesseurs</field>
       <field name="arch" type="xml">
@@ -49,7 +57,7 @@
     </record>
 
     <!-- ufec.porfesseurs action window -->
-    <record id="ufec_departement_action" model="ir.actions.act_window">
+    <record id="ufec_professeurs_action" model="ir.actions.act_window">
       <field name="name">Liste des Professeurs</field>
       <field name="res_model">ufec.porfesseurs</field>
       <field name="view_mode">tree,form</field>
@@ -64,7 +72,7 @@
     </record>
 
     <menuitem name="Professeurs" id="ufec_etudiant_professeurs" parent="ufec_etudiant_menu_root"  />
-    <menuitem name="liste des Professeurs" id="ufec_professeurs_list" parent="ufec_etudiant_professeurs" action="ufec_departement_action" />
+    <menuitem name="liste des Professeurs" id="ufec_professeurs_list" parent="ufec_etudiant_professeurs" action="ufec_professeurs_action" />
 
   </data>
 </odoo>

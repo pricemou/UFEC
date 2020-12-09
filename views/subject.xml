@@ -11,8 +11,15 @@
               <group>
                 <field name="nom"/>
                 <field name="code"/>
+                <field name="deparment_id"/>
               </group>
+              
             </group>
+            <notebook>
+                <page string="Liste des  professeurs">
+                  <field name="professeurs_ids"/>
+                </page>
+            </notebook>
           </sheet>
         </form>
       </field>

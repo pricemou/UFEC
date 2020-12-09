@@ -28,6 +28,8 @@
                 <field name="Nationalite"/>
                 <field name="statue_de_enfant"/>
                 <field name="adreesse"/>
+                <field name="deparment_id"/>
+                <field name="classe_id"/>
               </group>
               
             </group>
