@@ -4,6 +4,7 @@ from odoo import models, fields, api
 
 class Ufec_subject(models.Model):
     _name = 'ufec.subject'
+    _rec_name = "nom"
 
     nom = fields.Char()
     code = fields.Char()

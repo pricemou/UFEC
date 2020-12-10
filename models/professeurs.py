@@ -23,3 +23,11 @@ class Ufec_professeurs(models.Model):
                             relation='prof_class_ref',
                             column1='f_nom',
                             column2='classe_nom')
+
+    @api.multi
+    def name_get(self):
+        result = []
+        for porfesseurs in self:
+            f_name = '[' + str(porfesseurs.deparment_id.nom) + '] ' + str(porfesseurs.f_nom) + ' '+ str(porfesseurs.prenom)
+            result.append((porfesseurs.id, f_name))
+        return result

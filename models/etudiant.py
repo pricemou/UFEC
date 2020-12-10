@@ -23,3 +23,11 @@ class ufec_Etudiant(models.Model):
     Non_du_tuteur = fields.Char()
     profession = fields.Char()
     Contacts = fields.Char()
+
+    @api.multi
+    def name_get(self):
+        result = []
+        for etudiant in self:
+            name = '[' + str(etudiant.classe_id.classe_nom) + '] ' + str(etudiant.nom) + ' '+ str(etudiant.prenom)
+            result.append((etudiant.id, name))
+        return result
