@@ -6,6 +6,10 @@
       <field name="model">ufec.etudiant</field>
       <field name="arch" type="xml">
         <form string="">
+        <header>
+          <button name="next_level" type="obejct" class="oe_highlight" string="Next"></button>
+          <field name="state" widget="statusbar"  nolabel="1"></field>
+        </header>
           <sheet>
             <group>
               <group>
@@ -21,18 +25,22 @@
                 <field name="age"/>
                 <field name="lieu_de_naissance"/>
                 <field name="date_inscription"/>
+                <field name="sexe"/>
               </group>
 
                <group>
-                <field name="sexe"/>
                 <field name="Nationalite"/>
                 <field name="statue_de_enfant"/>
                 <field name="adreesse"/>
                 <field name="deparment_id"/>
                 <field name="classe_id"/>
               </group>
-              
             </group>
+            <notebook>
+               <page string="Liste des Matièrs">
+                  <field name="subject_ids"/>
+               </page>
+              </notebook>
           </sheet>
         </form>
       </field>

@@ -12,6 +12,11 @@
                 <field name="classe_nom"/>
                 <field name="code"/>
               </group>
+              <group>
+                <field name="num_prof"/>
+                <field name="num_sub"/>
+                <field name="num_ets"/>
+              </group>
             </group>
             <notebook>
               <page string="Liste of professeurs">
@@ -25,6 +30,11 @@
               </page>
             </notebook>
           </sheet>
+            <!-- Champs responsable des abonnement -->
+            <div class="oe_chatter">
+              <field name="message_follower_ids" widget="mail_followers" ></field>
+              <field name="message_follower_ids" widget="mail_thread" ></field>
+            </div>
         </form>
       </field>
     </record>
