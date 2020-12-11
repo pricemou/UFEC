@@ -55,4 +55,4 @@ class ufec_Etudiant(models.Model):
         elif self.state == 'L3':
             return self.write({'state':'fini'})
         else:
-            return {'warning':{'title': 'fini', 'message':'l elever a deja terminer son annee'}}
+            return {'warning': {'title': 'warning', 'message':'Nombre de matiere est suprieur a 3'}}
