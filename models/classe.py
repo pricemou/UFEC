@@ -37,7 +37,7 @@ class Ufec_classe(models.Model):
         self.num_ets = len(self.student_ids)
             
     
-    @api.onchange(subject_ids)
+    @api.onchange('subject_ids')
     def on_change_state(self):
         if len(self.subject_ids) > 3:
-            return {" warning ": {'title':'warning', 'message':'inferireu 3'}}
+            return {'warning': {'title': 'warning', 'message':'Nombre de matiere est suprieur a 3'}}
