@@ -44,9 +44,5 @@
         </p>
       </field>
     </record>
-
-    <menuitem name="Departement" id="ufec_etudiant_departement" parent="ufec_etudiant_menu_root"  />
-    <menuitem name="liste des Departements" id="ufec_departement_list" parent="ufec_etudiant_departement" action="ufec_departement_action" />
-
   </data>
 </odoo>

@@ -27,6 +27,7 @@
         'views/departement.xml',
         'views/professeurs.xml',
         'views/subject.xml',
+        'views/menu.xml',
         'views/templates.xml',
     ],
     # only loaded in demonstration mode

@@ -6,14 +6,16 @@
       <field name="model">ufec.etudiant</field>
       <field name="arch" type="xml">
         <form string="">
+
         <header>
-          <button name="next_level" type="obejct" class="oe_highlight" string="Next"></button>
-          <field name="state" widget="statusbar"  nolabel="1"></field>
+          <button name="next_level" type="object" class="oe_highlight" string="Next"></button>
+          <field name="state" widget="statusbar"  nolabel="1"  class="oe_highlight"></field>
         </header>
+
           <sheet>
             <group>
               <group>
-                <field name="image" widget="image" nolabel="1" class="oe_avatar" />
+                <field name="image" widget="image" nolabel="1" class="oe_avatar"/>
               </group>
 
               <group>
@@ -77,11 +79,5 @@
         </p>
       </field>
     </record>
-
-    <menuitem name="UFEC" id="ufec_etudiant_menu_root"/>
-
-    <menuitem name="Elévre" id="ufec_etudiant_elevre" parent="ufec_etudiant_menu_root"  />
-    <menuitem name="liste des Elévres" id="ufec_etudiant_liste" parent="ufec_etudiant_elevre" action="ufec_etudiant_action" />
-
   </data>
 </odoo>

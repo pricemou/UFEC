@@ -67,8 +67,7 @@
       </field>
     </record>
 
-    <menuitem name="Classe" id="ufec_etudiant_classe" parent="ufec_etudiant_menu_root"  />
-    <menuitem name="liste des Classes" id="ufec_classe_list" parent="ufec_etudiant_classe" action="ufec_classe_action" />
+    
 
   </data>
 </odoo>

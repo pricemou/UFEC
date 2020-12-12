@@ -7,6 +7,12 @@
       <field name="arch" type="xml">
         <form string="">
           <sheet>
+            <div class="oe_button_box" name="button_box">
+              <button string="Envoye Email" icon="fa-envelope-o" class="oe_start_button" name="send_mail" object="object"></button>
+              <button class="oe_start_button" name="toggle_active" type="object" icon="fa-archive">
+                <field name="active" widget="boolean_button"></field>
+              </button>
+            </div>
             <group>
                 <group>
                 <field name="image" widget="image" nolabel="1" class="oe_avatar" />
@@ -20,13 +26,16 @@
                 <field name="sexe"/>
                 <field name="telephone"/>
                 <field name="adresse"/>
-                <field name="Nationalite"/>
-                <field name="Responsabilite"/>
-                <field name="NBR_jours"/>
-                <field name="salaire"/>
-                <field name="date_inscription"/>
-                <field name="deparment_id"/>
-                <field name="subject_id"/>
+                
+              </group>
+              <group>
+                  <field name="Nationalite"/>
+                  <field name="Responsabilite"/>
+                  <field name="NBR_jours"/>
+                  <field name="salaire"/>
+                  <field name="date_inscription"/>
+                  <field name="deparment_id"/>
+                  <field name="subject_id"/>
               </group>
             </group>
             <notebook>
@@ -70,9 +79,6 @@
         </p>
       </field>
     </record>
-
-    <menuitem name="Professeurs" id="ufec_etudiant_professeurs" parent="ufec_etudiant_menu_root"  />
-    <menuitem name="liste des Professeurs" id="ufec_professeurs_list" parent="ufec_etudiant_professeurs" action="ufec_professeurs_action" />
 
   </data>
 </odoo>

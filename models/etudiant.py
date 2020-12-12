@@ -16,7 +16,12 @@ class ufec_Etudiant(models.Model):
     adreesse = fields.Text()
     date_inscription= fields.Datetime()
 
-    state = fields.Selection([("L1","Level 1"),("L2","Level 2"),("L3","Level 3"),("fini","fini")])
+    tuteur = fields.Char(string="Tuteur")
+    Non_du_tuteur = fields.Char(string="string")
+    profession = fields.Char()
+    Contacts = fields.Char()
+
+    state = fields.Selection([("l1","Level 1"),("l2","Level 2"),("l3","Level 3"),("fin_parcours","fin parcours"),])
 
     deparment_id = fields.Many2one(comodel_name='ufec.departement')
     classe_id = fields.Many2one(comodel_name='ufec.classe')
@@ -24,10 +29,6 @@ class ufec_Etudiant(models.Model):
     #champs relier
     subject_ids= fields.Many2many(related='classe_id.subject_ids')
 
-    tuteur = fields.Char()
-    Non_du_tuteur = fields.Char()
-    profession = fields.Char()
-    Contacts = fields.Char()
 
 
     @api.multi
@@ -38,21 +39,19 @@ class ufec_Etudiant(models.Model):
             result.append((etudiant.id, name))
         return result
 
-
     @api.one
     @api.constrains('lieu_de_naissance','date_inscription')
     def date_check(self):
-        if self.lieu_de_naissance > self.date_inscription:
+        if self.date_inscription > self.lieu_de_naissance:
             raise ValueError('the binary')
 
-    
     @api.multi
     def next_level(self):
-        if self.state == 'L1':
-            return self.write({'state':'L2'})
-        elif self.state == 'L2':
-            return self.write({'state':'L3'})
-        elif self.state == 'L3':
-            return self.write({'state':'fini'})
-        else:
+        if self.state == 'l1':
+            return self.write({'state':'l2'})
+        elif self.state == 'l2':
+            return self.write({'state':'l3'})
+        elif self.state == 'l3':
+            return self.write({'state':'fin_parcours'})
+        elif self.state == 'fin_parcours':
             return {'warning': {'title': 'warning', 'message':'Nombre de matiere est suprieur a 3'}}

@@ -16,6 +16,8 @@ class Ufec_professeurs(models.Model):
     salaire = fields.Text()
     date_inscription= fields.Datetime()
 
+    active = fields.Boolean()
+
     deparment_id = fields.Many2one(comodel_name='ufec.departement')
     subject_id = fields.Many2one(comodel_name='ufec.subject')
 
@@ -31,3 +33,25 @@ class Ufec_professeurs(models.Model):
             f_name = '[' + str(porfesseurs.deparment_id.nom) + '] ' + str(porfesseurs.f_nom) + ' '+ str(porfesseurs.prenom)
             result.append((porfesseurs.id, f_name))
         return result
+
+
+    @api.multi
+    def send_mail(self):
+        self.ensure_one()
+        template_id = self.env.ref('ufec.mail_template_prof').id
+        ctx = {
+            'default_model': 'ufec.porfesseurs',
+            'default_res_id': self.id,
+            'default_user_template': bool(template_id),
+            'default_template_id': template_id,
+            'default_composition_mode': 'comment',
+            'email_to': self.email,
+        } 
+        return {
+            'type': 'ir.action.act_window',
+            'view_type': 'form',
+            'view_mode': 'form',
+            'res_model': 'mail.compose.message',
+            'target': 'new',
+            'context': ctx,
+        }

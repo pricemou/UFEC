@@ -1,0 +1,14 @@
+<odoo>
+    <!-- Liste des differents menus --> 
+    <menuitem name="UFEC" id="ufec_etudiant_menu_root"/>
+    <menuitem name="Elévre" id="ufec_etudiant_elevre" parent="ufec_etudiant_menu_root"  />
+    <menuitem name="liste des Elévres" id="ufec_etudiant_liste" parent="ufec_etudiant_elevre" action="ufec_etudiant_action" />
+    <menuitem name="Professeurs" id="ufec_etudiant_professeurs" parent="ufec_etudiant_menu_root"  />
+    <menuitem name="liste des Professeurs" id="ufec_professeurs_list" parent="ufec_etudiant_professeurs" action="ufec_professeurs_action" />
+    <menuitem name="Departement" id="ufec_etudiant_departement" parent="ufec_etudiant_menu_root"  />
+    <menuitem name="liste des Departements" id="ufec_departement_list" parent="ufec_etudiant_departement" action="ufec_departement_action" />
+    <menuitem name="Classe" id="ufec_etudiant_classe" parent="ufec_etudiant_menu_root"  />
+    <menuitem name="liste des Classes" id="ufec_classe_list" parent="ufec_etudiant_classe" action="ufec_classe_action" />
+    <menuitem name="Matière" id="ufec_etudiant_subject" parent="ufec_etudiant_menu_root"  />
+    <menuitem name="liste des Matière" id="ufec_subject_list" parent="ufec_etudiant_subject" action="ufec_subject_action" />
+</odoo>

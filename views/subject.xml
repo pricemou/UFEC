@@ -52,8 +52,5 @@
       </field>
     </record>
 
-    <menuitem name="Matière" id="ufec_etudiant_subject" parent="ufec_etudiant_menu_root"  />
-    <menuitem name="liste des Suject" id="ufec_subject_list" parent="ufec_etudiant_subject" action="ufec_subject_action" />
-
   </data>
 </odoo>
