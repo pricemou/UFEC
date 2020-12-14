@@ -8,15 +8,13 @@ class Ufec_professeurs(models.Model):
     prenom = fields.Char()
     identifiant_carte = fields.Char()
     sexe = fields.Selection([("Homme","Homme"),("Femme","femme")])
-    telephone= fields.Text()
+    telephone= fields.Text() 
     adresse = fields.Text()
     Nationalite = fields.Char()
     Responsabilite = fields.Char()
     NBR_jours = fields.Char()
     salaire = fields.Text()
     date_inscription= fields.Datetime()
-
-    active = fields.Boolean()
 
     deparment_id = fields.Many2one(comodel_name='ufec.departement')
     subject_id = fields.Many2one(comodel_name='ufec.subject')
@@ -34,11 +32,10 @@ class Ufec_professeurs(models.Model):
             result.append((porfesseurs.id, f_name))
         return result
 
-
     @api.multi
     def send_mail(self):
         self.ensure_one()
-        template_id = self.env.ref('ufec.mail_template_prof').id
+        template_id = self.env.ref('ufec.email_template_prof').id
         ctx = {
             'default_model': 'ufec.porfesseurs',
             'default_res_id': self.id,
@@ -48,7 +45,7 @@ class Ufec_professeurs(models.Model):
             'email_to': self.email,
         } 
         return {
-            'type': 'ir.action.act_window',
+            'type': 'ir.actions.act_window',
             'view_type': 'form',
             'view_mode': 'form',
             'res_model': 'mail.compose.message',

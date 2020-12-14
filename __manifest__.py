@@ -17,7 +17,7 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base','mail'],
+    'depends': ['base','mail','contacts'],
 
     # always loaded
     'data': [
@@ -28,6 +28,9 @@
         'views/professeurs.xml',
         'views/subject.xml',
         'views/menu.xml',
+        'reports/report.xml',
+        'reports/partient_card.xml',
+        'views/send_mail.xml',
         'views/templates.xml',
     ],
     # only loaded in demonstration mode

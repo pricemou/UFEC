@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <report
+        id="report_ir_ufec_etudiant"
+        string="Etudiant Card"
+        model="ufec.etudiant"
+        report_type="qweb-pdf"
+        name= "ufec.report_etudiant"
+        file="ufec.report_etudiant" />
+        
+</odoo>

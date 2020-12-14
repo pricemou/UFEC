@@ -1,84 +1,82 @@
 <odoo>
   <data>
-    <!-- ufec.porfesseurs form view -->
-    <record id="ufec_professeurs_view_form" model="ir.ui.view">
-      <field name="name">Professeurs: list</field>
-      <field name="model">ufec.porfesseurs</field>
-      <field name="arch" type="xml">
-        <form string="">
-          <sheet>
-            <div class="oe_button_box" name="button_box">
-              <button string="Envoye Email" icon="fa-envelope-o" class="oe_start_button" name="send_mail" object="object"></button>
-              <button class="oe_start_button" name="toggle_active" type="object" icon="fa-archive">
-                <field name="active" widget="boolean_button"></field>
-              </button>
-            </div>
-            <group>
+          <!-- ufec.porfesseurs form view -->
+      <record id="ufec_professeurs_view_form" model="ir.ui.view">
+        <field name="name">Professeurs: list</field>
+        <field name="model">ufec.porfesseurs</field>
+        <field name="arch" type="xml">
+          <form string="">
+            <sheet>
+              <div class="oe_button_box" name="button_box">
+                <button string="Envoye Email" icon="fa-envelope" class="oe_start_button" name="send_mail" object="object"></button>
+                <button class="oe_start_button" name="toggle_active" type="object" icon="fa-archive">
+                </button>
+              </div>
+              <group>
+                  <group>
+                  <field name="image" widget="image" nolabel="1" class="oe_avatar" />
+                </group>
                 <group>
-                <field name="image" widget="image" nolabel="1" class="oe_avatar" />
+                </group>
+                <group>
+                  <field name="f_nom"/>
+                  <field name="prenom"/>
+                  <field name="identifiant_carte"/>
+                  <field name="sexe"/>
+                  <field name="telephone"/>
+                  <field name="adresse"/>
+                  
+                </group>
+                <group>
+                    <field name="Nationalite"/>
+                    <field name="Responsabilite"/>
+                    <field name="NBR_jours"/>
+                    <field name="salaire"/>
+                    <field name="date_inscription"/>
+                    <field name="deparment_id"/>
+                    <field name="subject_id"/>
+                </group>
               </group>
-              <group>
-              </group>
-              <group>
-                <field name="f_nom"/>
-                <field name="prenom"/>
-                <field name="identifiant_carte"/>
-                <field name="sexe"/>
-                <field name="telephone"/>
-                <field name="adresse"/>
-                
-              </group>
-              <group>
-                  <field name="Nationalite"/>
-                  <field name="Responsabilite"/>
-                  <field name="NBR_jours"/>
-                  <field name="salaire"/>
-                  <field name="date_inscription"/>
-                  <field name="deparment_id"/>
-                  <field name="subject_id"/>
-              </group>
-            </group>
-            <notebook>
-            <page string="Liste des classes">
-              <field name="classe_ids"/>
-            </page>
-          </notebook>
-          </sheet>
-          
-        </form>
-      </field>
-    </record>
+              <notebook>
+              <page string="Liste des classes">
+                <field name="classe_ids"/>
+              </page>
+            </notebook>
+            </sheet>
+            
+          </form>
+        </field>
+      </record>
 
-    <!-- ufec.porfesseurs tree view -->
-    <record id="ufec_professeurs_view_tree" model="ir.ui.view">
-      <field name="name">ufec.porfesseurs.view.tree</field>
-      <field name="model">ufec.porfesseurs</field>
-      <field name="arch" type="xml">
-        <tree>
-          <field name="f_nom"/>
-          <field name="prenom"/>
-          <field name="identifiant_carte"/>
-          <field name="sexe"/>
-          <field name="telephone"/>
-          <field name="adresse"/>
-        </tree>
-      </field>
-    </record>
+      <!-- ufec.porfesseurs tree view -->
+      <record id="model_name_view_tree" model="ir.ui.view">
+        <field name="name">ufec.porfesseurs.view.tree</field>
+        <field name="model">ufec.porfesseurs</field>
+        <field name="arch" type="xml">
+          <tree>
+            <field name="f_nom"/>
+            <field name="prenom"/>
+            <field name="identifiant_carte"/>
+            <field name="sexe"/>
+            <field name="telephone"/>
+            <field name="adresse"/>
+          </tree>
+        </field>
+      </record>
 
-    <!-- ufec.porfesseurs action window -->
-    <record id="ufec_professeurs_action" model="ir.actions.act_window">
-      <field name="name">Liste des Professeurs</field>
-      <field name="res_model">ufec.porfesseurs</field>
-      <field name="view_mode">tree,form</field>
-      <field name="view_type">form</field>
-      <field name="help" type="html">
-        <p class="oe_view_nocontent_create">
-          <!-- Add Text Here -->
-        </p><p>
-          <!-- More details about what a user can do with this object will be OK --> 
-        </p>
-      </field>
-    </record>
-
+      <!-- ufec.porfesseurs action window -->
+      <record id="ufec_professeurs_action" model="ir.actions.act_window">
+        <field name="name">Liste des Professeurs</field>
+        <field name="res_model">ufec.porfesseurs</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_type">form</field>
+        <field name="help" type="html">
+          <p class="oe_view_nocontent_create">
+            <!-- Add Text Here -->
+          </p><p>
+            <!-- More details about what a user can do with this object will be OK --> 
+          </p>
+        </field>
+      </record>
   </data>
 </odoo>

@@ -9,7 +9,7 @@
 
         <header>
           <button name="next_level" type="object" class="oe_highlight" string="Next"></button>
-          <field name="state" widget="statusbar"  nolabel="1"  class="oe_highlight"></field>
+          <field name="state" widget = "statusbar"  statusbar_colors='{"invoice_except":"red","waiting_date":"blue"}'  nolabel="1"  class="oe_highlight"></field>
         </header>
 
           <sheet>
@@ -19,25 +19,39 @@
               </group>
 
               <group>
+                    <field name="matricule"/>
               </group>
               
               <group>
                 <field name="nom"/>
                 <field name="prenom"/>
                 <field name="age"/>
+                <field name="date_de_naissance"/>
                 <field name="lieu_de_naissance"/>
-                <field name="date_inscription"/>
                 <field name="sexe"/>
               </group>
 
                <group>
                 <field name="Nationalite"/>
+                <field name="date_inscription" />
                 <field name="statue_de_enfant"/>
                 <field name="adreesse"/>
                 <field name="deparment_id"/>
-                <field name="classe_id"/>
+                <field name="classe_id" attrs="{'required': [('deparment_id', '!=', False)]} " />
               </group>
             </group>
+
+            <group>
+                <group>
+                    <field name="tuteur"/>
+                    <field name="Non_du_tuteur"/>
+                </group>
+                 <group>
+                      <field name="profession"/>
+                      <field name="Contacts"/>
+                </group>
+              </group>
+
             <notebook>
                <page string="Liste des Matièrs">
                   <field name="subject_ids"/>
