@@ -15,6 +15,8 @@ class Ufec_professeurs(models.Model):
     NBR_jours = fields.Char()
     salaire = fields.Text()
     date_inscription= fields.Datetime()
+    active = fields.Boolean('Active', default=True)
+    email = fields.Char()
 
     deparment_id = fields.Many2one(comodel_name='ufec.departement')
     subject_id = fields.Many2one(comodel_name='ufec.subject')
