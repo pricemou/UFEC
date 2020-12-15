@@ -7,5 +7,13 @@
         report_type="qweb-pdf"
         name= "ufec.report_etudiant"
         file="ufec.report_etudiant" />
-        
+    
+    <report
+        id="report_ir_ufec_etudiant_xlx"
+        string="Etudiant Card Excel"
+        model="ufec.etudiant"
+        report_type="xlsx"
+        name= "ufec.report_etudiant_xlx"
+        file="ufec.report_etudiant_xlx" />
+
 </odoo>
