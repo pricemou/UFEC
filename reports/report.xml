@@ -16,4 +16,12 @@
         name= "ufec.report_etudiant_xlx"
         file="ufec.report_etudiant_xlx" />
 
+    <report
+        id="report_ir_ufec_professeurs_email"
+        string="Etudiant Card Excel"
+        model="ufec.porfesseurs"
+        report_type="xlsx"
+        name= "ufec.report_etudiant_xlx"
+        file="ufec.report_etudiant_xlx" />
+
 </odoo>

@@ -8,7 +8,7 @@ class Ufec_classe(models.Model):
     _inherit = 'mail.thread'
     _rec_name='classe_nom'
 
-    classe_nom = fields.Char(string='Nom')
+    classe_nom = fields.Char(string='Classe', required=True)
     code = fields.Char()
 
     student_ids = fields.One2many(comodel_name='ufec.etudiant', inverse_name='classe_id')
@@ -36,7 +36,6 @@ class Ufec_classe(models.Model):
     def comp_stu(self):
         self.num_ets = len(self.student_ids)
             
-    
     @api.onchange('subject_ids')
     def on_change_state(self):
         if len(self.subject_ids) > 3:

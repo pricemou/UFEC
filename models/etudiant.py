@@ -7,11 +7,11 @@ class ufec_Etudiant(models.Model):
     _name = 'ufec.etudiant'
     
     image = fields.Binary()
-    matricule = fields.Char()
-    nom = fields.Char()
-    prenom = fields.Char()
-    age = fields.Char()
-    date_de_naissance = fields.Date()
+    matricule = fields.Char(required=True)
+    nom = fields.Char(required=True)
+    prenom = fields.Char(required=True)
+    age = fields.Char(required=True)
+    date_de_naissance = fields.Date(required=True)
     lieu_de_naissance = fields.Char()
     sexe = fields.Selection([("Homme","Homme"),("Femme","femme")])
     Nationalite = fields.Char()
@@ -29,7 +29,7 @@ class ufec_Etudiant(models.Model):
     deparment_id = fields.Many2one(comodel_name='ufec.departement')
     classe_id = fields.Many2one(comodel_name='ufec.classe')
 
-    #champs relier
+    #champs rellier
     subject_ids= fields.Many2many(related='classe_id.subject_ids')
 
 

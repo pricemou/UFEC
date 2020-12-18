@@ -31,6 +31,7 @@
         'reports/report.xml',
         'reports/partient_card.xml',
         'views/send_mail.xml',
+        'data/mail_template.xml',
         'views/templates.xml',
     ],
     # only loaded in demonstration mode

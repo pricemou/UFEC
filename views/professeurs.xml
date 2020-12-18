@@ -1,6 +1,6 @@
 <odoo>
   <data>
-          <!-- ufec.porfesseurs form view -->
+      <!-- ufec.porfesseurs form view -->
       <record id="ufec_professeurs_view_form" model="ir.ui.view">
         <field name="name">Professeurs: list</field>
         <field name="model">ufec.porfesseurs</field>

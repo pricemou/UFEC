@@ -34,23 +34,10 @@ class Ufec_professeurs(models.Model):
             result.append((porfesseurs.id, f_name))
         return result
 
-    @api.multi
+
     def send_mail(self):
-        self.ensure_one()
-        template_id = self.env.ref('ufec.email_template_prof').id
-        ctx = {
-            'default_model': 'ufec.porfesseurs',
-            'default_res_id': self.id,
-            'default_user_template': bool(template_id),
-            'default_template_id': template_id,
-            'default_composition_mode': 'comment',
-            'email_to': self.email,
-        } 
-        return {
-            'type': 'ir.actions.act_window',
-            'view_type': 'form',
-            'view_mode': 'form',
-            'res_model': 'mail.compose.message',
-            'target': 'new',
-            'context': ctx,
-        }
+        print('sending email')
+        template_id = self.env.ref('ufec.email_template_ufec_professeur').id
+        template =self.env['mail.template'].browse(template_id)
+        print('template odoo',template)
+        # self.env['mail.template'].browse(template_id).send_mail(self.id, force_send=True)
