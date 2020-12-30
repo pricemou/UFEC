@@ -1,0 +1,50 @@
+<odoo>
+  <data>
+    <!-- ufec.caisse form view -->
+    <record id="ufec_caisse_view_form" model="ir.ui.view">
+      <field name="name">caisse: list</field>
+      <field name="model">ufec.caisse</field>
+      <field name="arch" type="xml">
+        <form string="">
+          <sheet>
+            <group>
+              <group>
+                <field name="moi"/>
+                <field name="versement"/>
+              </group>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!-- ufec.caisse tree view -->
+    <record id="ufec_caisse_view_tree" model="ir.ui.view">  
+      <field name="name">ufec.caisse.view.tree</field>
+      <field name="model">ufec.caisse</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="versement"/>
+          <field name="moi"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- ufec.caisse action window -->
+    <!-- ufec.caisse action window -->
+    <record id="ufec_caisse_action" model="ir.actions.act_window">
+      <field name="name">Liste des caisse</field>
+      <field name="res_model">ufec.caisse</field>
+      <field name="view_mode">tree,form</field>
+      <field name="view_type">form</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create">
+          <!-- Add Text Here -->
+        </p><p>
+          <!-- More details about what a user can do with this object will be OK --> 
+        </p>
+      </field>
+    </record>
+    
+  </data>
+</odoo>

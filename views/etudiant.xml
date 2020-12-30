@@ -53,6 +53,9 @@
               </group>
 
             <notebook>
+              <page string="Versement">
+                  <field name="caisse_id"/>
+              </page>
                <page string="Liste des Matièrs">
                   <field name="subject_ids"/>
                </page>

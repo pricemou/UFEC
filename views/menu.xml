@@ -11,4 +11,6 @@
     <menuitem name="liste des Classes" id="ufec_classe_list" parent="ufec_etudiant_classe" action="ufec_classe_action" />
     <menuitem name="Matière" id="ufec_etudiant_subject" parent="ufec_etudiant_menu_root"  />
     <menuitem name="liste des Matière" id="ufec_subject_list" parent="ufec_etudiant_subject" action="ufec_subject_action" />
+    <menuitem name="Caisse" id="ufec_etudiant_caisse" parent="ufec_etudiant_menu_root"  />
+    <menuitem name="La Caisse" id="ufec_caisse_list" parent="ufec_etudiant_caisse" action="ufec_caisse_action" />
 </odoo>

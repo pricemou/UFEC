@@ -27,6 +27,7 @@
         'views/departement.xml',
         'views/professeurs.xml',
         'views/subject.xml',
+        'views/caisse.xml',
         'views/menu.xml',
         'reports/report.xml',
         'reports/partient_card.xml',

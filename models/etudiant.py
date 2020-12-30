@@ -2,6 +2,8 @@
 
 from odoo import models, fields, api
 from odoo.exceptions import ValidationError
+import logging
+_logger  = logging.getLogger(__name__)
 
 class ufec_Etudiant(models.Model):
     _name = 'ufec.etudiant'
@@ -18,11 +20,11 @@ class ufec_Etudiant(models.Model):
     statue_de_enfant= fields.Char(string="Statue de l'enfant")
     adreesse = fields.Text()
     date_inscription= fields.Datetime()
-
     tuteur = fields.Char(string="Tuteur")
     Non_du_tuteur = fields.Char()
     profession = fields.Char()
     Contacts = fields.Char()
+    
 
     state = fields.Selection([("l1","Level 1"),("l2","Level 2"),("l3","Level 3"),("fin_parcours","fin parcours")],default='l1')
 
@@ -31,7 +33,7 @@ class ufec_Etudiant(models.Model):
 
     #champs rellier
     subject_ids= fields.Many2many(related='classe_id.subject_ids')
-
+    caisse_id = fields.One2many(comodel_name="ufec.caisse", inverse_name='etudiant_id')
 
 
     @api.multi
@@ -58,3 +60,8 @@ class ufec_Etudiant(models.Model):
             return self.write({'state':'fin_parcours'})
         else:
             raise ValidationError ("l' Etudiants a fini sont parcour scolaire ")
+             
+
+    def montant_caisse(self):
+        _logger.error("************* Avant *********************")
+        _logger.error(self.caisse_id)

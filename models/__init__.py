@@ -6,4 +6,5 @@ from . import departement
 from . import classe
 from . import subject
 from . import send_message
+from . import caisse
 
